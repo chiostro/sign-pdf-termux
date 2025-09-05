@@ -6,7 +6,7 @@
 # transform yourpicsgnature.jpg in .png using this commmand:
 # magick file.jpg file.png
 
-test  $# != 6  && echo "Sinopsy: $0 pdforigin signedpng totpage pagetosign resizesign% wheretosigninpixel \n
+test  $# != 6  && echo "Sintax: $0 pdforigin signedpng totpage pagetosign resizesign% wheretosigninpixel \n
 ex.: $0  document.pdf signed.png 2 2 30 +130+1610"
 pdfname=${1:-non-belligerence_pact.pdf}
 signpng=${2:-napoleone.png}
