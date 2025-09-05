@@ -42,7 +42,7 @@ pkg instsll poppler
 
     ```bash
     git clone https://github.com/chiostro/sign-pdf-termux.git
-    cd signpdf
+    cd  sign-pdf-termux
     ```
 
 5. **Run the project** :
