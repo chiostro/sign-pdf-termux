@@ -66,9 +66,11 @@ pkg instsll poppler
          transform jpg in png using magick command
          magick signature.jpg signature.png
          sh signpdf.sh Document.pdf signature.png 2 2 30 +130+1610 #  x & y  Cartesian position is expressed in pixels.  Signature will be placed near the left side of the page, up about 1/4 of page A4
+         Check the result, change the coordinates, if your signature is not cleare edit signpdf.sh and replace white with grey, using vi or  nano or sed
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE file](LICENSE) for details.
+
 
 
