@@ -49,9 +49,10 @@ pkg instsll poppler
 
 
     ```bash
-     sh signpdf.sh file.pdf filesignature.png pagestotal pagetisign resizesignature wheretoputsignatureinpixel
+     sh signpdf.sh file.pdf filesignature.png pagestotal pagetosign resizesignature wheretoputsignatureinpixel
     ```
-
+ Example sh signpdf.sh document.pdf signed.png 2 2 30 +130+1610
+ 
 ## Usage
 
      bash script you can run without parameters
