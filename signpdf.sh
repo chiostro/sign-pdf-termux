@@ -1,7 +1,7 @@
 # Shell created by Andrea Noto
 # 05 Sep 2025
-# Sign on w white paper and take a picture of your signature
-# Try to save only avrectangle contained you signature
+# Sign on white paper and take a picture of your signature
+# Try to save only a rectangle containing your signature
 # Copy document to sign under same folder of shell
 # transform yourpicsgnature.jpg in .png using this commmand:
 # magick file.jpg file.png
