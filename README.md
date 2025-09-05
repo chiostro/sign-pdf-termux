@@ -38,14 +38,14 @@ pkg install pdftk
 pkg instsll poppler
     ```
 
-4. **Clone the project repository**:
+5. **Clone the project repository**:
 
     ```bash
     git clone https://github.com/chiostro/sign-pdf-termux.git
     cd  sign-pdf-termux
     ```
 
-5. **Run the project** :
+6. **Run the project** :
 
 
     ```bash
@@ -56,7 +56,16 @@ pkg instsll poppler
 ## Usage
 
      bash script you can run without parameters
-     for default as test it will overwrite the original pdf in the folder with the signature of Napoleone, printing a new file with the suffix "signed_"
+     for default as test it will overwrite the original pdf in the folder with the signature of Napoleone, printing a new file with the suffix "signed_".
+     For the porpose:
+     Make a picture of you signature, move the picture to download folder of mobile
+     Copy your dounloaded document pdf file and signature.jpg from /storage/emulated/0/Download/ to  ~/sign-pdf-termux
+     ex. cd ~/sign-pdf-termux 
+         cp /storage/emulated/0/Download/Document.pdf .
+         cp /storage/emulated/0/Download/signature.jpg .
+         transform jpg in png using magick command
+         magick signature.jpg signature.png
+         sh signpdf.sh Document.pdf signature.png 2 2 30 +130+1610 #  x & y  Cartesian position is expressed in pixels.  Signature will be placed near the left side of the page, up about 1/4 of page A4
 
 ## License
 
