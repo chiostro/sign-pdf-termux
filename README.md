@@ -35,7 +35,7 @@ Before installing the project, make sure you have **Termux** installed on your A
     pkg install git
     pkg install imagemagick
     pkg install pdftk
-    pkg instsll poppler  
+    pkg install poppler  
     ```
 
 5. **Clone the project repository**:
@@ -89,12 +89,15 @@ If you're familiar with the command prompt and need to insert a signature at the
 
 The first command is magick (convert is deprecate), which receives your .pdf  to create your .png, e.g.:
 
+
     ```bash
     magick pag2.pdf page2-1.png
     ```
+
 The script signpdf.sh creates the support files, so you can use them.
 
 This command inserts the photo at the bottom center:
+
 
     ```bash
     composite -compose over -gravity South -geometry +0+0 new.png page2-1.png result.png
@@ -104,7 +107,6 @@ Then you need to convert it back to PDF:
     ```bash
     magick result.png result.pdf
     ```
-
 
 This inserts at the bottom right:
 
