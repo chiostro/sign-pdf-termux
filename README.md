@@ -79,4 +79,4 @@ The raster signature is not a qualified digital signature (PKI). It's more like 
 
 Firma Elettronica Semplice (FES)
 Firma Elettronica Avanzata (FEA)
-Firma Elettronica Qualificata (FEQ), identificata anche come Firma Digitale (FD)
+Firma Elettronica Qualificata (FEQ), identified like Firma Digitale (FD)
