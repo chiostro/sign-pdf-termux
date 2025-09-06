@@ -73,4 +73,10 @@ Before installing the project, make sure you have **Termux** installed on your A
 This project is licensed under the MIT License - see the [LICENSE file](LICENSE) for details.
 
 
+## NOTE
 
+The raster signature is not a qualified digital signature (PKI). It's more like a graphic markup, so it has no legal value in contexts requiring certified electronic signatures, like:
+
+Firma Elettronica Semplice (FES)
+Firma Elettronica Avanzata (FEA)
+Firma Elettronica Qualificata (FEQ), identificata anche come Firma Digitale (FD)
