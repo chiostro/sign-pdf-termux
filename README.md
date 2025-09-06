@@ -113,10 +113,11 @@ Then you need to convert it back to PDF:
 
 This inserts at the bottom right:
 
+
     ```bash
-    
-    composite -compose over -gravity SouthEast -geometry +0+0 new.png page2-1.png result.png
+    composite -compose over -gravity SouthEast -geometry +0+0 new.png page2-1.png result.png 
     ```
+
 I'll leave you to imagine the other parameters for inserting the photo at the top right, bottom left, etc.
 
 
