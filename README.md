@@ -57,16 +57,16 @@ To test script signpdf.sh as a DEMO, parameters [file.pdf filesignature.png page
 ## Usage
 Bash script  can run without parameters, for default as test, it will overwrite the original pdf in the folder with the signature of Napoleone, printing a new file with the suffix "signed_". 
 For the porpose:
-Make a picture of you signature, move the picture to download folder of mobile, copy your dounloaded document pdf file and signature.jpg from /storage/emulated/0/Download/ to  ~/sign-pdf-termux ,  e.g.:     
+Make a picture of you signature, move the picture to download folder of mobile, copy your dounloaded document pdf file and signature.jpg from /storage/emulated/0/Download/ to  ~/sign-pdf-termux , if PDf has 2 pages and signature must go on the second, e.g.:     
      
      cd ~/sign-pdf-termux 
          cp /storage/emulated/0/Download/Document.pdf .
          cp /storage/emulated/0/Download/signature.jpg .
          # transform jpg in png using magick command
          magick signature.jpg signature.png
-         sh signpdf.sh Document.pdf signature.png 2 2 30 +130+1610 #  x & y  Cartesian position is expressed in pixels.  Signature will be placed near the left side of the page, up about 1/4 of page A4
+         sh signpdf.sh Document.pdf signature.png 2 2 30 +130+350 #  x & y  Cartesian position is expressed in pixels.  Signature will be placed near the left side of the page, up about 1/4 of page A4, 30 reduces the signature from 100% to 30%
 
- Check the result, change the coordinates, if your signature is not cleare edit signpdf.sh and replace white with grey, using vi or  nano or sed
+ Check the result, change the coordinates, if your signature is not clear edit signpdf.sh and replace white with grey, using vi or  nano or sed or tell it to me
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE file](LICENSE) for details.
