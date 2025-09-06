@@ -83,6 +83,7 @@ Firma Elettronica Avanzata (FEA)
 Firma Elettronica Qualificata (FEQ), identified like Firma Digitale (FD)
 If you're familiar with the command prompt and need to insert a signature at the bottom of a single-page PDF, you can convert the PDF to PNG.
 
+
 The first command is magick (convert is deprecate), which receives your .pdf  to create your .png, e.g.:
     ```bash
     magick pag2.pdf page2-1.png
