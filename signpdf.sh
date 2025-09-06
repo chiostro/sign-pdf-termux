@@ -7,21 +7,23 @@
 # transform yourpicsgnature.jpg in .png using this commmand:
 # magick file.jpg file.png
 
-test  $# != 6  && echo "Syntax: $0 pdforigin signedpng totpage pagetosign resizesign% wheretosigninpixel 
-ex.: $0  document.pdf signed.png 2 2 30 +130+1610"
+test  $# != 6  && echo "Syntax: $0 pdforigin signedpng backgoundcolor[w|g] pagetosign resizesign% wheretosigninpixel  
+e.g.x: $0  document.pdf signed.png w 2 30 +130+350 "
 if [ $# -gt 0 ] && [ $# -lt 6 ];then
     exit 0
 fi
 #Parameters setting
 pdfname=${1:-non-belligerence_pact.pdf}
 signpng=${2:-napoleone.png}
-numpage=${3:-2}
+whitegrey=${3:-"w"}
 pagetosign=${4:-2}
 resize=${5:-30}
 coord=${6:-"+130+350"}
 #Check files
 test ! -f $pdfname && echo "PDF notte fonda" && exit 1
 test ! -f $signpng && echo "PNG notte fonda" && exit 1
+numpage=`pdfinfo $pdfname | grep Pages | awk '{print $2}'`
+test "$whitegrey" = "w" && backgrou="white" || backgrou="grey" 
 
 #Split the document in n pages
 i=1
@@ -35,7 +37,7 @@ done
 pdftoppm -png pag${pagetosign}.pdf page${pagetosign}
 
 # Exclude background
-magick  $signpng  -fuzz 13% -transparent white immagine_trasparente.png
+magick  $signpng  -fuzz 13% -transparent $backgrou immagine_trasparente.png
 #Resize your signature
 magick immagine_trasparente.png -resize $resize% new.png
 #Overwrite page to sign
