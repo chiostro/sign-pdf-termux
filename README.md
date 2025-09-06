@@ -47,10 +47,11 @@ Before installing the project, make sure you have **Termux** installed on your A
 
 6. **Run the project** :
 
-To test script signpdf.sh, parameters [file.pdf filesignature.png pagestotal pagetosign resizesignature wheretoputsignatureinpixel] are not requested
+To test script signpdf.sh as a DEMO, parameters [file.pdf filesignature.png pagestotal pagetosign resizesignature wheretoputsignatureinpixel] are not requested
     ```bash
      sh signpdf.sh 
     ```
+ The file pds and png will be used.
  Example sh signpdf.sh document.pdf signed.png 2 2 30 +130+1610
  
 ## Usage
@@ -80,3 +81,31 @@ The raster signature is not a qualified digital signature (PKI). It's more like 
 Firma Elettronica Semplice (FES)
 Firma Elettronica Avanzata (FEA)
 Firma Elettronica Qualificata (FEQ), identified like Firma Digitale (FD)
+If you're familiar with the command prompt and need to insert a signature at the bottom of a single-page PDF, you can convert the PDF to PNG.
+
+The first command is magick (convert is deprecate), which receives your .pdf  to create your .png, e.g.:
+    ```bash
+    magick pag2.pdf page2-1.png
+    ```
+The script signpdf.sh creates the support files, so you can use them.
+
+This command inserts the photo at the bottom center:
+    ```bash
+    composite -compose over -gravity South -geometry +0+0 new.png page2-1.png result.png
+    ```
+Then you need to convert it back to PDF:
+    ```bash
+    magick result.png result.pdf
+    ```
+
+
+This inserts at the bottom right:
+    ```bash
+    composite -compose over -gravity SouthEast -geometry +0+0 new.png page2-1.png result.png
+    ```
+I'll leave you to imagine the other parameters for inserting the photo at the top right, bottom left, etc.
+
+To permanently remove the processing files, perhaps after saving your signature with a transparent background in the encrypted folder, you need to use the shred command: 
+    ```bash
+    shred -vuz -n 3 pag?.pdf pag?_modi.p?? new.png page?-1.png
+    ```
