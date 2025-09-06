@@ -80,7 +80,10 @@ The raster signature is not a qualified digital signature (PKI). It's more like 
 
 Firma Elettronica Semplice (FES)
 Firma Elettronica Avanzata (FEA)
-Firma Elettronica Qualificata (FEQ), identified like Firma Digitale (FD)
+Firma Elettronica Qualificata (FEQ), identified like Firma Digitale (FD).
+
+
+
 If you're familiar with the command prompt and need to insert a signature at the bottom of a single-page PDF, you can convert the PDF to PNG.
 
 
