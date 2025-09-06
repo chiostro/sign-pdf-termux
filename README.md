@@ -51,8 +51,8 @@ To test script signpdf.sh as a DEMO, parameters [file.pdf filesignature.png page
     ```bash
      sh signpdf.sh 
     ```
- The file pds and png will be used.
- Example sh signpdf.sh document.pdf signed.png 2 2 30 +130+1610
+ The file pds and png conteined   in the folder will be used.
+ Example of run:  sh signpdf.sh document.pdf signed.png w 2 30 +130+1610 # w means white for background of the signed paper.
  
 ## Usage
 Bash script  can run without parameters. For default as test, it will overwrite the original pdf in the folder with the signature of Napoleone, printing a new file with the suffix "signed_". 
@@ -64,9 +64,9 @@ Make a picture of you signature, move the picture to download folder of mobile, 
          cp /storage/emulated/0/Download/signature.jpg .
          # transform jpg in png using magick command
          magick signature.jpg signature.png
-         sh signpdf.sh Document.pdf signature.png 2 2 30 +130+350 #  x & y  Cartesian position is expressed in pixels.  Signature will be placed near the left side of the page, up about 1/4 of page A4, 30 reduces the signature from 100% to 30%
+         sh signpdf.sh Document.pdf signature.png w 2 30 +130+350 #  x & y  Cartesian position is expressed in pixels.  Signature will be placed near the left side of the page, up about 1/4 of page A4, 30 reduces the signature from 100% to 30%
 
- Check the result, change the coordinates, if your signature is not clear, edit signpdf.sh and replace white with grey, using vi or  nano or sed or tell it to me
+ Check the result, change the coordinates, if your signature is not clear, replace w (white) with g (grey)
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE file](LICENSE) for details.
@@ -90,7 +90,7 @@ The first command is magick (convert is deprecate), which receives your .pdf  to
 
 The script signpdf.sh creates the support files, so you can use them.
 
-This command inserts the photo at the bottom center:
+The next command inserts the photo at the bottom center:
 
     composite -compose over -gravity South -geometry +0+0 new.png page2-1.png result.png
     
@@ -107,5 +107,13 @@ This inserts at the bottom right:
     
 
 I'll leave you to imagine the other parameters for inserting the photo at the top right, bottom left, etc.
+
+To remove for ever tmp files :
+
+    
+    shred -vuz -n 3     pag1.pdf pag2.pdf pag2_modi.pdf pag2_modi.png page2-1.png 
+    
+
+
 
 
