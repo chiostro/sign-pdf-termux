@@ -25,11 +25,11 @@ Before installing the project, make sure you have **Termux** installed on your A
 
     ```bash
     termux-setup-storage
-    ls  /storage/emulated/0/Download/
+    cd  /storage/emulated/0/Download/
 
     ```
 
-4 **Install necessary dependencies** (if any, such as `git`, `pdftk`, etc.):
+4 **Install necessary dependencies** 
 
     ```bash
 pkg install git
