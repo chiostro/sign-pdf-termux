@@ -31,11 +31,11 @@ Before installing the project, make sure you have **Termux** installed on your A
 
 4 **Install necessary dependencies** 
 
-    ```bash
-pkg install git
-pkg install imagemagick
-pkg install pdftk
-pkg instsll poppler
+     ```bash
+    pkg install git
+    pkg install imagemagick
+    pkg install pdftk
+    pkg instsll poppler  
     ```
 
 5. **Clone the project repository**:
