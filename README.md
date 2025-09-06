@@ -113,8 +113,4 @@ This inserts at the bottom right:
     ```
 I'll leave you to imagine the other parameters for inserting the photo at the top right, bottom left, etc.
 
-To permanently remove the processing files, perhaps after saving your signature with a transparent background in the encrypted folder, you need to use the shred command: 
 
-    ```bash
-    shred -vuz -n 3 pag?.pdf pag?_modi.p?? new.png page?-1.png
-    ```
