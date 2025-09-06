@@ -12,12 +12,16 @@ ex.: $0  document.pdf signed.png 2 2 30 +130+1610"
 if [ $# -gt 0 ] && [ $# -lt 6 ];then
     exit 0
 fi
+#Parameters setting
 pdfname=${1:-non-belligerence_pact.pdf}
 signpng=${2:-napoleone.png}
 numpage=${3:-2}
 pagetosign=${4:-2}
 resize=${5:-30}
 coord=${6:-"+130+350"}
+#Check files
+test ! -f $pdfname && echo "PDF notte fonda" && exit 1
+test ! -f $signpng && echo "PNG notte fonda" && exit 1
 #Split the document in n pages
 i=1
 while [ $i -le $numpage ]
