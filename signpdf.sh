@@ -1,13 +1,17 @@
+#!/bin/bash
 # Shell created by Andrea Noto
 # 05 Sep 2025
-# Sign on white paper and take a picture of your signature
+# Sign on a white paper and take a picture of your signature
 # Try to save only a rectangle containing your signature
 # Copy document to sign under same folder of shell
 # transform yourpicsgnature.jpg in .png using this commmand:
 # magick file.jpg file.png
 
-test  $# != 6  && echo "Syntax: $0 pdforigin signedpng totpage pagetosign resizesign% wheretosigninpixel \n
+test  $# != 6  && echo "Syntax: $0 pdforigin signedpng totpage pagetosign resizesign% wheretosigninpixel 
 ex.: $0  document.pdf signed.png 2 2 30 +130+1610"
+if [ $# -gt 0 ] && [ $# -lt 6 ];then
+    exit 0
+fi
 pdfname=${1:-non-belligerence_pact.pdf}
 signpng=${2:-napoleone.png}
 numpage=${3:-2}
