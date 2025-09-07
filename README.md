@@ -48,14 +48,16 @@ Before installing the project, make sure you have **Termux** installed on your A
 6. **Run the project** :
 
 To test script signpdf.sh as a DEMO, parameters [file.pdf filesignature.png pagestotal pagetosign resizesignature wheretoputsignatureinpixel] are not requested
-    ```bash
+
+    
      sh signpdf.sh 
-    ```
- The file pds and png conteined   in the folder will be used.
+     cp signed_non-belligerence.pdf /storage/emulated/0/Download
+    
+ The file pds and png conteined   in the folder will be used. Now you can check the signed pdf under download folder.
  Example of run:  sh signpdf.sh document.pdf signed.png w 2 30 +130+1610 # w means white for background of the signed paper.
  
 ## Usage
-Bash script  can run without parameters. For default as test, it will overwrite the original pdf in the folder with the signature of Napoleone, printing a new file with the suffix "signed_". 
+Bash script  can run without parameters. For default as test, it will overwrite the original pdf in the folder with the signature of Napoleone, printing a new file with the suffix "signed_". Copy document to sign under same folder of shell
 For the porpose:
 Make a picture of you signature, move the picture to download folder of mobile, copy your dounloaded document pdf file and signature.jpg from /storage/emulated/0/Download/ to  ~/sign-pdf-termux , if PDf has 2 pages and signature must go on the second, e.g.:     
      
