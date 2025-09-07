@@ -61,7 +61,7 @@ Bash script  can run without parameters. For default as test, it will overwrite 
 For the porpose:
 Make a picture of you signature, move the picture to download folder of mobile, copy your dounloaded document pdf file and signature.jpg from /storage/emulated/0/Download/ to  ~/sign-pdf-termux , if PDf has 2 pages and signature must go on the second, e.g.:     
      
-     cd ~/sign-pdf-termux 
+     cd  sign-pdf-termux 
          cp /storage/emulated/0/Download/Document.pdf .
          cp /storage/emulated/0/Download/signature.jpg .
          # transform jpg in png using magick command
