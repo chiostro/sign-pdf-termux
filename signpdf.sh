@@ -8,7 +8,7 @@
 # magick file.jpg file.png
 
 test  $# != 6  && echo "Syntax: $0 pdforigin signedpng backgoundcolor[w|g] pagetosign resizesign% wheretosigninpixel  
-e.g.x: $0  document.pdf signed.png w 2 30 +130+350 "
+e.g.x: $0  document.pdf signed.png w 2 30 +130+950 "
 if [ $# -gt 0 ] && [ $# -lt 6 ];then
     exit 0
 fi
@@ -18,7 +18,7 @@ signpng=${2:-napoleone.png}
 whitegrey=${3:-"w"}
 pagetosign=${4:-2}
 resize=${5:-30}
-coord=${6:-"+130+350"}
+coord=${6:-"+130+950"}
 #Check files
 test ! -f $pdfname && echo "PDF notte fonda" && exit 1
 test ! -f $signpng && echo "PNG notte fonda" && exit 1
