@@ -124,5 +124,5 @@ To take a rectangle containg the signature  :
 
 
 Using the command "identify" CaterinaII.png, you get info like dimensions in pixels.
-Using command "magick" your_pic.png, you cut frame starting from position of pixels +450+280, getting a  rectangle of width and height 420x195.  
+Using command "magick" your_pic.png, starting from position of pixels +450+280, you crop a specific rectangle of width and height 420x195.
 Using command "termux-open"  left_half.png , Andorid will ask you to use your defult app.
