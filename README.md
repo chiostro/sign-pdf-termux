@@ -61,16 +61,19 @@ To test script signpdf.sh as a DEMO, parameters [file.pdf filesignature.png page
 Bash script  can run without parameters. For default as test, it will overwrite the original pdf in the folder with the signature of Napoleone, printing a new file with the suffix "signed_". Copy document to sign under same folder of shell signpdf.sh.
 
 For the porpose:
-Make a picture of your signature, move the picture to download folder of mobile, copy your dounloaded document pdf file and signature.jpg from /storage/emulated/0/Download/ to  ~/sign-pdf-termux , if PDf has 2 pages and signature must go on the second, e.g.:     
+Make a picture of your signature, move the picture to download folder of mobile, copy your dounloaded document pdf file and signature.jpg from /storage/emulated/0/Download/ to  ~/sign-pdf-termux , if PDf has 2 pages and signature must go on the second, parameter n° 4  must be 2, 
+run like e.g.:     
      
      cd  sign-pdf-termux 
          cp /storage/emulated/0/Download/Document.pdf .
          cp /storage/emulated/0/Download/signature.jpg .
          # transform jpg in png using magick command
          magick signature.jpg signature.png
-         sh signpdf.sh Document.pdf signature.png w 2 30 +130+350 #  x & y  Cartesian position is expressed in pixels.  Signature will be placed near the left side of the page, up about 1/4 of page A4, 30 reduces the signature from 100% to 30%
+         sh signpdf.sh Document.pdf signature.png w 2 30 +130+350 #  x & y  Cartesian position is expressed in pixels.  Signature will be placed near the left side of the page, up about 1/4 of page A4, 30 reduces dimensions of the signature.png from 100% to 30%.
 
- Check the result, change the coordinates, if your signature is not clear, replace w (white) with g (grey)
+
+Check the result, if signature is not on the right positione, change the coordinates.
+If your signature is not clear, replace w (white) with g (grey)
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE file](LICENSE) for details.
