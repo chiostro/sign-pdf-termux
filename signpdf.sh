@@ -22,6 +22,7 @@ whitegrey=${3:-"w"}
 pagetosign=${4:-2}
 resize=${5:-30}
 coord=${6:-"+130+950"}
+DownloadPath=/storage/emulated/0/Download/
 #Check files
 test ! -f $pdfname && echo "PDF notte fonda" && exit 1
 test ! -f $signpng && echo "PNG notte fonda" && exit 1
