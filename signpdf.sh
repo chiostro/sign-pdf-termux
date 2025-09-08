@@ -84,6 +84,7 @@ echo "Creating signed file: "
 pdftk $command cat output signed_${PDF_signed}
 test ! -f  signed_${PDF_signed}&& echo "Error creating signed file! "&& exit 1
 ls signed_${PDF_signed}
+termux-open signed_${PDF_signed}&
 echo
 test -d $DownloadPath && echo " Copy and paste the following command: 
 cp signed_${PDF_signed} $DownloadPath"
