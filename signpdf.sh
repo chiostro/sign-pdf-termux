@@ -7,8 +7,11 @@
 # transform yourpicsgnature.jpg in .png using this commmand:
 # magick file.jpg file.png
 
-test  $# != 6  && echo "Syntax: $0 pdforigin signedpng backgoundcolor[w|g] pagetosign resizesign% wheretosigninpixel  
-e.g.x: $0  document.pdf signed.png w 2 30 +130+950 "
+test  $# != 6  && echo "Syntax:
+$0 pdf_origin signed_png backgound_color[w|g] page_to_sign resize_sign% where_to_sign_in_pixel  
+e.g.: 
+$0  document.pdf signed.png w 2 30 +130+950  
+"
 if [ $# -gt 0 ] && [ $# -lt 6 ];then
     exit 0
 fi
@@ -23,7 +26,11 @@ coord=${6:-"+130+950"}
 test ! -f $pdfname && echo "PDF notte fonda" && exit 1
 test ! -f $signpng && echo "PNG notte fonda" && exit 1
 numpage=`pdfinfo $pdfname | grep Pages | awk '{print $2}'`
-test "$whitegrey" = "w" && backgrou="white" || backgrou="grey" 
+
+if [ $pagetosign -gt $numpage  ] || [ $pagetosign -lt 1 ];then
+    echo "Page to sign is out of range. Num of PDF pg is $numpage " && exit 1
+fi
+
 
 #Split the document in n pages
 i=1
@@ -36,7 +43,18 @@ done
 #Transforn pdf in png
 pdftoppm -png pag${pagetosign}.pdf page${pagetosign}
 
+#Check signaure position inside pdf
+dim=`identify page${pagetosign}-1.png |awk '{ gsub(/x/, " ", $3);print $3}'`
+l=`echo $dim|awk '{ print $1}' `
+h=`echo $dim|awk '{ print $2}' `
+xy=`echo $coord|awk '{gsub(/+/, " ", $1);print $1}'`
+x=`echo $xy|awk '{ print $1}' `
+y=`echo $xy|awk '{ print $2}' `
+test $x -gt $l && echo "Coordinates error!" && exit 1
+test $y -gt $h && echo "Coordinates error!" && exit 1
+
 # Exclude background
+test "$whitegrey" = "w" && backgrou="white" || backgrou="grey" 
 magick  $signpng  -fuzz 13% -transparent $backgrou immagine_trasparente.png
 #Resize your signature
 magick immagine_trasparente.png -resize $resize% new.png
@@ -58,5 +76,14 @@ do
     i=`expr $i + 1`
 done
 #Print pdf with new name
-pdftk $command cat output signed_${pdfname}
-
+PDF_signed=`basename $pdfname`
+echo
+echo "Original file to sign: $PDF_signed"
+echo "Creating signed file: "
+pdftk $command cat output signed_${PDF_signed}
+test ! -f  signed_${PDF_signed}&& echo "Error creating signed file! "&& exit 1
+ls signed_${PDF_signed}
+echo
+test -d $DownloadPath && echo " Copy and paste the following command: 
+cp signed_${PDF_signed} $DownloadPath"
+exit 0
