@@ -55,6 +55,7 @@ To test script signpdf.sh as a DEMO, parameters [file.pdf filesignature.png page
     
  The file pds and png conteined   in the folder will be used. Now you can check the signed pdf under download folder.
  Example of run:  sh signpdf.sh document.pdf signed.png w 2 30 +130+1610 # w means white for background of the signed paper.
+ If your signature is not clear and transparent (backgraound of new.png must be all black, if you check) at the end of running, try to pass g (for grey background of the paper where you signed).
  
 ## Usage
 Bash script  can run without parameters. For default as test, it will overwrite the original pdf in the folder with the signature of Napoleone, printing a new file with the suffix "signed_". Copy document to sign under same folder of shell signpdf.sh.
