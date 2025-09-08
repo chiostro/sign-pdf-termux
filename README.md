@@ -60,7 +60,7 @@ To test script signpdf.sh as a DEMO, parameters [file.pdf filesignature.png page
 Bash script  can run without parameters. For default as test, it will overwrite the original pdf in the folder with the signature of Napoleone, printing a new file with the suffix "signed_". Copy document to sign under same folder of shell signpdf.sh.
 
 For the porpose:
-Make a picture of you signature, move the picture to download folder of mobile, copy your dounloaded document pdf file and signature.jpg from /storage/emulated/0/Download/ to  ~/sign-pdf-termux , if PDf has 2 pages and signature must go on the second, e.g.:     
+Make a picture of your signature, move the picture to download folder of mobile, copy your dounloaded document pdf file and signature.jpg from /storage/emulated/0/Download/ to  ~/sign-pdf-termux , if PDf has 2 pages and signature must go on the second, e.g.:     
      
      cd  sign-pdf-termux 
          cp /storage/emulated/0/Download/Document.pdf .
