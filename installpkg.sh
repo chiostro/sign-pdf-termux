@@ -1,5 +1,5 @@
-pkg install git
-pkg install imagemagick
-pkg install pdftk
-pkg install poppler
+pkg install -y git
+pkg install -y imagemagick
+pkg install -y pdftk
+pkg install -y poppler
 
