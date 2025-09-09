@@ -61,7 +61,7 @@ To test script signpdf.sh as a DEMO, parameters [file.pdf signature.png backgrou
 Bash script  can run without parameters. For default as test, it will overwrite the original pdf in the folder with the signature of Napoleone, printing a new file with the suffix "signed_". Copy document to sign under same folder of shell signpdf.sh.
 
 For the porpose:
-Make a picture of your signature, move the picture to download folder of mobile, copy your dounloaded document pdf file and signature.jpg from /storage/emulated/0/Download/ to  ~/sign-pdf-termux , if PDf has 2 pages and signature must go on the second, parameter n° 4  must be 2, 
+Make a picture of your signature, move the picture to download folder of mobile, copy your downloaded document pdf file and signature.jpg from /storage/emulated/0/Download/ to  sign-pdf-termux , if PDf has 2 pages and signature must go on the second, parameter n° 4  must be 2, 
 run like e.g.:     
      
      cd  sign-pdf-termux 
@@ -86,10 +86,10 @@ Firma Elettronica Semplice (FES)
 Firma Elettronica Avanzata (FEA)
 Firma Elettronica Qualificata (FEQ), identified like Firma Digitale (FD).
 
-## Other command
+## Other commands
 
 If you're familiar with the command prompt and need to insert a signature at the bottom of a single-page PDF, you can convert the PDF to PNG.
-The first command is magick (convert is deprecate), which receives your .pdf  to create your .png, e.g.:
+The first command is magick (convert is deprecated), which receives your .pdf  to create your .png, e.g.:
     
     
     magick pag2.pdf page2-1.png
@@ -121,7 +121,7 @@ To remove for ever tmp files :
     shred -vuz -n 3     pag1.pdf pag2.pdf pag2_modi.pdf pag2_modi.png page2-1.png 
     
 
-To take a rectangle containg the signature  :
+To crop a rectangle containg the signature  :
 
     
     magick CaterinaII.png -crop 420x195+450+280 +repage left_half.png 
@@ -130,4 +130,4 @@ To take a rectangle containg the signature  :
 
 Using the command "identify" CaterinaII.png, you get info like dimensions in pixels.
 Using command "magick" your_pic.png, starting from position of pixels +450+280, you crop a specific rectangle of width and height 420x195.
-Using command "termux-open"  left_half.png , Andorid will ask you to use your defult app.
+Using command "termux-open"  left_half.png , Andorid will ask you to use your defult app to open file.
