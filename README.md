@@ -47,7 +47,7 @@ Before installing the project, make sure you have **Termux** installed on your A
 
 6. **Run the project** :
 
-To test script signpdf.sh as a DEMO, parameters file.pdf signature.png background_png page_to_sign resize_signature_png where_to_sign_in_pixel] are not requested
+To test script signpdf.sh as a DEMO, parameters [file.pdf signature.png background_png page_to_sign resize_signature_png where_to_sign_in_pixel] are not requested
 
     
      sh signpdf.sh 
