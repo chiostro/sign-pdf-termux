@@ -118,7 +118,7 @@ I'll leave you to imagine the other parameters for inserting the photo at the to
 To remove for ever tmp files :
 
     
-    shred -vuz -n 3     pag1.pdf pag2.pdf pag2_modi.pdf pag2_modi.png page2-1.png 
+    shred -vuz -n 3     pag1.pdf pag2.pdf pag2_modi.pdf pag2_modi.png page2-1.png immagine_trasparente.png
     
 
 To crop a rectangle containg the signature  :
